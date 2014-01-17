@@ -1,2 +1,6 @@
 # client data
 muestras.csv
+
+# trash
+.*.swp
+*~
