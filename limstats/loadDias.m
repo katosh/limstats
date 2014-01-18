@@ -27,7 +27,7 @@ function dias=loadDias
 		dias.in(i) = mktime(strptime([temp.F{i}," ",temp.in{i}],'%d-%m-%Y %T'));
 		dias.out(i) = mktime(strptime([temp.F{i}," ",temp.out{i}],'%d-%m-%Y %T'));
 		%dias.F(i) = mktime(strptime(temp.F{i},'%d-%m-%Y'));
-			
+
 			% mostrar status:
 			pos = i * fact;
 			if (pos >= p)
@@ -36,7 +36,7 @@ function dias=loadDias
 				warten = strftime('%T',gmtime(wa));
 				Status=[num2str(floor(pos*100)),"%"]
 			endif
-			
+
 	endfor
 	[dias.in i] = sort(dias.in');
 	dias.out = dias.out'(i);

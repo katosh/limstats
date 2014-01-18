@@ -16,8 +16,8 @@ dates.exrule(rrule.rrule(rrule.DAILY,
 f = open('tiempo_trabajo.csv','w')
 
 for d in dates:
-    string = str(d.month).zfill(2) + '-'
-    string += str(d.day).zfill(2) + '-'
+    string = str(d.day).zfill(2) + '-'
+    string += str(d.month).zfill(2) + '-'
     string += str(d.year)
     string += ';9:00;18:00\n'
     f.write(string)

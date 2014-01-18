@@ -13,6 +13,10 @@
 % You should have received a copy of the GNU General Public License
 % along with limstats.  If not, see <http://www.gnu.org/licenses/>.
 
+
+% set output format
+more off
+
 if !exist("dias") 
 	[D dias Labs] = loadAll; 
 else
@@ -551,7 +555,8 @@ case "e"
 	endif
 	end_try_catch
 case "q"
-	quit
+	%quit
+    return
 otherwise
 	printf("\n Eso no es una opcion. \n \n");
 	input("presione entre ...",'s');
@@ -563,7 +568,9 @@ run main.m
 
 catch
 	disp("--- ERROR ---");
-	disp(lasterr);
+    %disp(["at file: ",lasterror.stack.file," line: ",lasterror.stack.line, " column :",lasterror.stack.column])
+    disp(lasterror.message);
+	%disp(lasterr);
 	disp("\nSi tiene preguntas o comentarios o necesita ayuda, por favor escribe me a dominik.otto@gmail.com");
 	input("presione entre ...",'s');
 	run main.m

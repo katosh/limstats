@@ -17,5 +17,4 @@ function y = cof(x)
 	% all the functions for the coefficients in regression
 	y(1,:) = ones(length(x),1);
 	y(2,:) = 1./x;
-	% y(i,:) = f(x);
 endfunction

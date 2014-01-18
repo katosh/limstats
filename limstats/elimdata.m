@@ -16,11 +16,12 @@
 function [data index] = elimdata(opt,D,dias,in,out,trab,lab,Labs,err)
 
 	try
+        % test if err exits
 		test=!err;
 	catch
 		err=0;
 	end_try_catch
-	
+
 	if isempty(in)
 		in = min(opt);
 	elseif !isnumeric(in)
@@ -31,9 +32,9 @@ function [data index] = elimdata(opt,D,dias,in,out,trab,lab,Labs,err)
 	elseif !isnumeric(out)
 		out = confech(out);
 	endif
-	
+
 	ind = (in <= opt) & (opt <= out);
-	
+
 	if ismember(lab,Labs)
 		ind = ind & ismember(D.Lab,lab)';
 	endif
@@ -43,8 +44,8 @@ function [data index] = elimdata(opt,D,dias,in,out,trab,lab,Labs,err)
 	if err
 		ind = ind & !D.error;
 	endif
-	
+
 	index = find(ind);
 	data = opt(index);
-	
+
 endfunction
